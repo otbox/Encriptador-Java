@@ -227,7 +227,7 @@ public class tela extends javax.swing.JFrame {
     int chave = 0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (!jTextField2.getText().equals("")){
+        try {
             Random random = new Random();
             int rnd = random.nextInt(26);
             int rnd1 = random.nextInt(1);
@@ -238,11 +238,12 @@ public class tela extends javax.swing.JFrame {
             String encriptadoinverso = inverter(encriptado);
             String encriptadoII = criptografarnivelII(encriptadoinverso);
             jTextArea1.setText(encriptadoII); 
-        }
+        } catch (Exception e){}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try{
         int teste = Integer.parseInt(jTextField3.getText());
         
         if (teste == 0){}else{chave = Integer.parseInt(jTextField3.getText());}
@@ -251,6 +252,7 @@ public class tela extends javax.swing.JFrame {
             String descriptado = inverter(descriptografar(chave, descriptografarnivelII(jTextField2.getText())));
             jTextArea1.setText(descriptado); 
         }
+        }catch (Exception e){}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
